@@ -1,18 +1,6 @@
-# Project1 - BeCoinMaker
+# Be Coin Maker
+
+가상으로 코인을 만들어보고 비트코인, 블록체인, ICO와 같은 기술을 직접 체험 해 보세요.
 
 
-## How to run
-
-```bash
-$ npm install http-server -g
-$ http-server . -p 8888
-```
-
-or
-
-```bash
-bundle install
-bundle exec jekyll serve -P 8888
-```
-
-Then connect to `localhost:8888`
+[https://becoinmaker.github.io](https://becoinmaker.github.io)
