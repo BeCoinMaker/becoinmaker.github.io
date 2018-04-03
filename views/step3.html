@@ -1,0 +1,165 @@
+<section id="summary" class="common container">
+	<h2>다음과 같은 설정으로 코인이 만들어집니다.</h2>
+	<div>
+		<ul class="s-tile-container">
+			<li>
+				<div class="s-tile type-m not-btn selected">
+					<h5>{{ settings.type.name }}</h5>
+					<span>{{ settings.type.description }}</span>
+				</div>
+			</li>
+			<li>
+				<div class="s-tile type-m not-btn selected centered">
+					<div class="icon">
+						<i class="{{ data.statics.private[settings.private].icon }}"></i>
+					</div>
+					<h5>{{ data.statics.private[settings.private].title }}</h5>
+				</div>
+			</li>
+			<li>
+				<div class="s-tile type-m not-btn selected centered">
+					<div class="icon">
+						<i class="{{ data.statics.platform[settings.platform].icon }}"></i>
+					</div>
+					<h5>{{ data.statics.platform[settings.platform].title }}</h5>
+				</div>
+			</li>
+			<li>
+				<div class="s-tile type-m not-btn selected centered">
+					<div class="icon">
+						<i class="{{ data.statics.powpos[settings.powpos].icon }}"></i>
+					</div>
+					<h5>{{ data.statics.powpos[settings.powpos].shortTitle }}</h5>
+				</div>
+			</li>
+			<li>
+				<div class="s-tile type-m not-btn selected" style="font-size: 15px; padding: 15px 12px; line-height: 1.4">
+					<div>
+						<strong>블록타임</strong>
+						<span>{{ settings.blocktime }}초</span>
+					</div>
+					<div>
+						<strong>채굴보상</strong>
+						<span>{{ settings.reward }}코인</span>
+					</div>
+					<div>
+						<strong>반감기</strong>
+						<span>{{ settings.halflife }}개월</span>
+					</div>
+					<div>
+						<strong>전체발행량</strong>
+						<span>{{ settings.totalAmount }}만</span>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<form ng-submit="makeCoin()">
+	<section id="name-and-code" class="common container">
+		<h2>이름과 코드를 정해 주세요</h2>
+		<p>
+			한 번 정한 이름과 코드는 바꿀 수 없습니다. <br>
+			비트코인(BTC), 이더리움(ETH), 리플(XRP) 처럼 이름과 코드가 연계되게 작성 해 주세요.
+		</p>
+
+		<ul class="common-form">
+			<li>
+				<label for="name">
+					<span>코인 이름</span>
+					<i class="fas fa-question-circle" tooltips title="10자 이내로 써주세요"></i>
+				</label>
+				<input type="text" id="name" ng-model="settings.name" class="no-unit" maxlength="10">
+			</li>
+			<li>
+				<label for="code">
+					<span>코인 코드</span>
+					<i class="fas fa-question-circle" tooltips title="영문 대문자 3~7자로 써주세요"></i>
+				</label>
+				<input type="text" id="code" ng-model="settings.code" class="no-unit" minlength="3" maxlength="7" style="text-transform:uppercase">
+			</li>
+		</ul>
+	</section>
+
+	<section id="name-and-code" class="common container">
+		<h2>여러분이 초기에 보유할 코인을 지정하세요</h2>
+		<p>
+			전체 발행량 중 일정량은 여러분이 최초부터 가진 채로 시작할 수 있습니다.<br>
+			이 코인은 초기 투자자에게 지급(ICO)할 수도 있고, 시장 가격을 조정하기 위해서 사용할 수도 있습니다.<br>
+			초기 보유 코인이 너무 적다면 영향력을 행사하기 힘듭니다. 반대로 너무 많다면 발행 가능한 코인 수가 줄어들어 수명이 짧아질 수 있습니다.
+		</p>
+
+		<ul class="common-form">
+			<li>
+				<label for="initialOwnsRatio">
+					<span>초기 보유 코인</span>
+					<i class="fas fa-question-circle" tooltips title="20~60% 정도가 적당합니다"></i>
+				</label>
+				<input type="number" id="initialOwnsRatio" ng-model="settings.initialOwnsRatio" min="0" max="100">
+				<span class="unit">%</span>
+			</li>
+		</ul>
+	</section>
+
+	<section class="common container">
+		<button class="white-btn small">코인 만들기</button>
+	</section>
+</form>
+
+
+<section id="test" class="common">
+	<h2>코인 동작 테스트</h2>
+	<p class="s1">
+		<i class="far fa-check-circle"></i>
+		<span>지갑 발급에 성공했습니다.</span>
+	</p>
+	<p class="s2">
+		<i class="far fa-check-circle"></i>
+		<span>노드 구성에 성공했습니다.</span>
+	</p>
+	<p class="s3">
+		<img src="assets/image/test_transaction.png" width="296">
+	</p>
+	<p class="s4">
+		<i class="far fa-check-circle"></i>
+		<span>10+ Confirmations</span>
+	</p>
+	<p class="s5">
+		<i class="far fa-check-circle"></i>
+		<span>거래를 성공적으로 진행했습니다.</span>
+	</p>
+</section>
+
+
+<section id="result" class="common">
+	<h2>코인 생성에 성공했습니다.</h2>
+	<p>
+		소유자용 거래 지갑이 만들어졌으며,  3,000만 {{ settings.code | uppercase }}가 지갑에 담겨 있습니다.
+	</p>
+
+	<h3>지갑 주소:</h3>
+	<div class="box">
+		0x7ca387b77307bbc13d4a1d23af311232ff33e139586853fa44
+	</div>
+
+	<h3>지갑 비밀번호 (Private Key):</h3>
+	<div class="box">
+		0x883fd223e5c87312b900543f1a8c88a23f448d837ccd292532ebb13089f8c88a23f448d837ccd2da9e41d1f570b38091797580bb641f7f7ad11434910b1d7a4531257c63321bf457b5545064a63ff237fb5192dfe87da1814247d9b40c1c925324502922379a74cb69f8957a8a54b95dbfe8ee961d74713b9b8daa8d3a68924bbf514746cb1f4bb918fa63ff237fb5192dfe87da18142479692ec2ecc9396616b3595b2ca73b10bb3ce5f3e0b2a3b9e6e8a0ee86322bbde4af3c08dda0b7f647e5cc0376a74e540f74cdb13a
+	</div>
+
+	<div class="progress">
+		<div class="texts clearfix">
+			<div class="fl">초기 보유량 {{ settings.initialOwns | number }}만</div>
+			<div class="fr">전체 발행량 {{ settings.totalAmount | number }}만</div>
+		</div>
+		<div class="bar">
+			<div class="progressed"></div>
+			<div class="bg"></div>
+		</div>
+	</div>
+
+	<p style="margin-top: 50px">
+		<button class="primary-btn" ng-click="nextStep()">다음 단계로</button>
+	</p>
+</section>

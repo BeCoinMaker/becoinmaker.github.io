@@ -1,0 +1,139 @@
+<form ng-submit="showCurrencySection()">
+	<section class="common container">
+		<h2>코인을 대중에게 공개하고, 투자금을 받으세요</h2>
+		<p>
+			ICO란 Initial Coin Offering의 약자로, 개발진이 가지고 있는 코인(토큰)을 대중에게 팔아서 투자금을 모집하는<br>
+			일종의 크라우드 펀딩이라고 할 수 있습니다.
+		</p>
+		<p>
+			투자금은 대부분 암호화폐로 모집하며, 1 BTC 당 10,000개 코인 등의 가치로 교환됩니다.
+		</p>
+
+		<ul class="common-form">
+			<li>
+				<label for="price">
+					<span>1코인 가격</span>
+					<i class="fas fa-question-circle" tooltips title="암호화폐로 교환하기 때문에 우선 추정치만 입력합니다."></i>
+				</label>
+				<input type="number" id="price" ng-model="settings.price">
+				<span class="unit">KRW</span>
+			</li>
+			<li>
+				<label for="icoNumber">
+					<span>모집 코인 개수</span>
+					<i class="fas fa-question-circle" tooltips title="보유하고 있는 초기 코인 ({{ settings.initialOwns | number }}만 개) 이하로만 설정 가능합니다."></i>
+				</label>
+				<input type="number" id="icoNumber" ng-model="settings.icoNumber" min="0" max="{{ settings.initialOwns }}">
+				<span class="unit">만 개</span>
+			</li>
+		</ul>
+
+		<div style="margin-top: 20px">
+			<button class="white-btn small">다음</button>
+		</div>
+	</section>
+</form>
+
+<section id="currency" class="common container">
+	<h2>투자금을 받을 화폐를 선택 해 주세요</h2>
+	<p>
+		암호화폐로 투자를 받고, 그 대가로 설정한 비율만큼의 {{ settings.name }}을(를) 교환해줍니다.
+	</p>
+	<div>
+		<ul class="s-tile-container">
+			<li ng-repeat="currency in currencies">
+				<div class="s-tile type-m centered"
+						ng-class="{'selected': currency.selected}"
+						ng-click="useCurrency(currency)"
+					>
+					<div class="icon">
+						<i class="cc {{ currency.id }}-alt"></i>
+					</div>
+					<h5>{{ currency.title }}({{ currency.id }})</h5>
+				</div>
+				<div class="text">1 {{ currency.id }} = {{ (currency.price / settings.price) | number }} {{ settings.code }}</div>
+			</li>
+		</ul>
+	</div>
+	<div style="margin-top: 20px">
+		<button class="white-btn small" ng-click="showWalletSection()">다음</button>
+	</div>
+</section>
+
+
+<section id="wallets" class="common container">
+	<h2>투자금을 받을 암호화폐의 지갑 주소를 입력 해 주세요</h2>
+	<p>
+		개인 투자자는 여러분의 지갑으로 암호화폐를 전송 할 것입니다.<br>
+		암호화폐의 가치가 변동성이 심하긴 하지만, 현실 화폐를 사용하지 않으니 안전하고 법률이 제한하기 어렵습니다.
+	</p>
+	<ul class="common-form">
+		<li ng-repeat="currency in currencies" ng-show="currency.selected" class="long">
+			<label for="wallet_{{ currency.id }}">
+				<span>{{ currency.id }} 지갑주소</span>
+				<i class="fas fa-question-circle" tooltips title="{{ currency.id }} 입금용 지갑주소입니다."></i>
+			</label>
+			<input type="text" id="wallet_{{ currency.id }}" ng-model="settings.wallets[currency.id]" class="no-unit">
+		</li>
+	</ul>
+	<div style="margin-top: 20px">
+		<button class="white-btn small" ng-click="showResult()">다음</button>
+	</div>
+</section>
+
+
+<section id="result" class="common">
+	<h2>ICO를 위한 홈페이지를 운영합니다.</h2>
+	<p>
+		투자자를 모집하기 위해 코인의 용도, 목적, 개발현황 및 미래를 담은 홈페이지를 개발하고 운영합니다.<br>
+		또한 상세 내역을 담은 백서(White Paper)를 업로드하여 신뢰를 갖고 투자를 하도록 돕습니다.
+	</p>
+	
+	<div class="webite">
+		<h3>{{ settings.name }}에 투자하세요!</h3>
+		<p>
+			{{ settings.type.description }}<br>
+			아래 기술을 사용해서 구현되었습니다.
+		</p>
+		<ul class="s-tile-container">
+			<li>
+				<div class="s-tile type-m not-btn centered">
+					<div class="icon">
+						<i class="{{ data.statics.private[settings.private].icon }}"></i>
+					</div>
+					<h5>{{ data.statics.private[settings.private].title }}</h5>
+				</div>
+			</li>
+			<li>
+				<div class="s-tile type-m not-btn centered">
+					<div class="icon">
+						<i class="{{ data.statics.platform[settings.platform].icon }}"></i>
+					</div>
+					<h5>{{ data.statics.platform[settings.platform].title }}</h5>
+				</div>
+			</li>
+			<li>
+				<div class="s-tile type-m not-btn centered">
+					<div class="icon">
+						<i class="{{ data.statics.powpos[settings.powpos].icon }}"></i>
+					</div>
+					<h5>{{ data.statics.powpos[settings.powpos].shortTitle }}</h5>
+				</div>
+			</li>
+		</ul>
+		<h4>다음과 같은 비율로 교환이 진행됩니다</h4>
+		<p>
+			<div ng-repeat="currency in currencies" ng-show="currency.selected">
+				1 {{ currency.id }} = {{ (currency.price / settings.price) | number }} {{ settings.code }}
+			</div>
+		</p>
+	</div>
+
+	<p class="sub">
+		* 사용자들이 ICO를 하는 이유는 해당 코인이 실제로 유용하게 쓰여 가치가 높아진다면 큰 수익을 낼 수 있기 때문입니다.
+	</p>
+
+	<p style="margin-top: 50px">
+		<button class="primary-btn" ng-click="nextStep()">ICO 완료하기</button>
+	</p>
+</section>

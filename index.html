@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="bcmApp">
+<head>
+	<title>BeCoinMaker</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+
+	<base href="/">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+	<link rel="stylesheet" href="assets/webfont/cryptocoins.css">
+	<link rel="stylesheet" href="assets/css/sprites.css">
+	<link rel="stylesheet" href="assets/css/angular-tooltips.css">
+	<link rel="stylesheet" href="assets/css/common.css">
+	<link rel="stylesheet" href="assets/css/pages.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+	<script src="js/angular-tooltips.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/app.js"></script>
+
+</head>
+<body ng-class="page">
+	<header>
+		<div class="mask"></div>
+		<div class="container">
+			<div class="logo-wrap">
+				<a href="#!">
+					<div class="logo">
+						<span class="hidden2">BeCoinMaker</span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<nav class="gnb">
+			<ul class="container clearfix">
+				<li ng:class="location == '/step1' && 'selected'">시작하기 앞서</li>
+				<li ng:class="location == '/step2' && 'selected'">코인 설정</li>
+				<li ng:class="location == '/step3' && 'selected'">코인 생성</li>
+				<li ng:class="location == '/step4' && 'selected'">ICO 진행</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id="view" ng-view></div>
+	
+	<footer>
+		<div class="container">
+			<div class="logo"><span class="hidden2">BeCoinMaker</span></div>
+			<div>
+				Copyright &copy; 2018 BeCoinMaker. All rights reserved.<br>
+				BeCoinMaker는 ICO를 가상으로 진행 해보는 서비스이며 단순 정보 제공 이외에 어떤 기능도 하지 않고, 이후 사용자의 불법적인 투자 등에 대해 일절 책임을 지지 않습니다.<br><br>
+				후원하기: QaQ1HUVFyreNk6m7U8KoMyxjbp8kBfQnWw (퀀텀 지갑 주소)
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<section class="common container">
+	<h2>블록체인의 활용 방법에 대해서 알아봅시다</h2>
+	<p>
+		블록체인은 지금까지 없던 새로운 개념입니다. 단순히 거래가 가능한 암호화폐를 넘어, 탈중앙화를 통해 다양한 가치를 창출해 낼 수 있습니다.<br>
+		블록체인의 활용 방법은 수십, 수백 가지가 있지만, 그 중에서도 대표적인 6가지를 뽑아보았습니다.
+	</p>
+</section>
+
+<section class="usage">
+	<div class="container clearfix">
+		<div ng-repeat="category in data.categories" class="tile">
+			<h4>{{ category.name }}</h4>
+			<p>{{ category.description }}</p>
+			<h5>활용사례</h5>
+			<ul>
+				<li ng-repeat="example in category.examples">
+					<span class="coin50x" ng-class="example.code"></span><br>
+					<strong>{{ example.name }}</strong><br>
+					<span class="sub">{{ example.description }}</span>
+				</li>
+			</ul>
+		</div>
+</section>
+
+<section class="common container">
+	<h2>블록체인의 자세한 동작 원리가 궁금하세요?</h2>
+	<p>
+		아래 영상을 보고 원리를 한 번 알아보셔도 좋습니다.
+	</p>
+	<p class="movie" align="center">
+		<iframe id="ytplayer" type="text/html" width="640" height="360"
+			src="http://www.youtube.com/embed/SSo_EIwHSd4" frameborder="0"></iframe>
+	</p>
+</section>
+
+<div align="center">
+	<button class="primary-btn" ng-click="nextStep()">다음 단계로</button>
+</div>
+
