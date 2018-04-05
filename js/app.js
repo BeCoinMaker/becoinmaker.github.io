@@ -173,6 +173,7 @@ app.controller('Step3Controller', function ($scope, $rootScope, LocalSettings, N
 
 	$scope.makeCoin = function() {
 		$rootScope.settings.initialOwns = $rootScope.settings.initialOwnsRatio / 100 * $rootScope.settings.totalAmount;
+		$rootScope.settings.code = $rootScope.settings.code.toUpperCase();
 
 		NextSectionOpener.open('test');
 

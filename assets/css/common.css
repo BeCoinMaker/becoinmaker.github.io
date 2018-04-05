@@ -310,6 +310,10 @@ footer .logo{
 	font-weight: lighter;
 	padding: 6px 10px 7px;
 	margin-top: -5px;
+
+	position: absolute;
+	box-sizing: border-box;
+	width: inherit;
 }
 
 .s-tile.type-l .icon{
