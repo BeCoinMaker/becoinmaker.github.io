@@ -45,7 +45,7 @@ legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
 html,body{ margin: 0; padding: 0; }
 
 html, body, pre{
-	font-family: 'Nanum Square', sans-serif;
+	font-family: 'Nanum Square', 'NanumSquare', sans-serif;
 }
 a{ outline: none; }
 
