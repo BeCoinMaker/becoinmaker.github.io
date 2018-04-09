@@ -1,3 +1,6 @@
 name: BeCoinMaker
 baseurl: ""
 url: "https://becoinmaker.github.io"
+
+description: "비트코인, 블록체인, ICO와 같은 기술을 체험하며 학습해보세요"
+keywords: "blockchain,ico,coin,token,bitcoin,etherium,qtum"

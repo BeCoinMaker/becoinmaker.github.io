@@ -84,13 +84,11 @@ section.last-btn{
 .learn .s-tile:hover{ background-color: #e8e8e8; }
 
 
-
-/* learn/blockchain-usages.html */
-.learn section.common > h2.lined:before{
+.learn section.common > h2:before{
 	display: block;
 	position: absolute;
 	content: "";
-	width: 150px;
+	width: 50px;
 	height: 5px;
 	background-color: #138891;
 	top: -25px;
