@@ -3,27 +3,27 @@ var app = angular.module('bcmApp', ['ngRoute', '720kb.tooltips']);
 app.config(function ($routeProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'views/home.html',
-			controller: 'HomeController'
+			controller: 'IndexController',
+			template : '<div></div>'
 		})
 		.when('/step1', {
-			templateUrl: 'views/step1.html',
+			templateUrl: 'app/views/step1.html',
 			controller: 'Step1Controller'
 		})
 		.when('/step2', {
-			templateUrl: 'views/step2.html',
+			templateUrl: 'app/views/step2.html',
 			controller: 'Step2Controller'
 		})
 		.when('/step3', {
-			templateUrl: 'views/step3.html',
+			templateUrl: 'app/views/step3.html',
 			controller: 'Step3Controller'
 		})
 		.when('/step4', {
-			templateUrl: 'views/step4.html',
+			templateUrl: 'app/views/step4.html',
 			controller: 'Step4Controller'
 		})
 		.when('/complete', {
-			templateUrl: 'views/complete.html',
+			templateUrl: 'app/views/complete.html',
 			controller: 'CompleteController'
 		});
 });
@@ -101,8 +101,9 @@ app.run(function ($rootScope, $location, $window, LocalSettings) {
 
 
 
-app.controller('HomeController', function ($scope, $rootScope) {
-	$rootScope.page = 'home';
+app.controller('IndexController', function ($location) {
+	console.log('index');
+	$location.path('/step1');
 });
 
 app.controller('Step1Controller', function ($scope, $rootScope, LocalSettings) {

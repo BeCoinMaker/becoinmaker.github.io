@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="viewport" content="width=1200">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+	<link rel="stylesheet" href="/assets/webfont/cryptocoins.css">
+	<link rel="stylesheet" href="/assets/css/sprites.css">
+	<link rel="stylesheet" href="/assets/css/common.css">
+	<link rel="stylesheet" href="/assets/css/landing.css">
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117116907-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-117116907-1');
+	</script>
+
+</head>
+<body class="{{ page.class }}">
+	<header>
+		<div class="mask"></div>
+		<div class="container">
+			<div class="logo-wrap">
+				<a href="/">
+					<div class="logo">
+						<span class="hidden2">BeCoinMaker</span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</header>
+
+	<div id="view">
+		{{ content }}
+	</div>
+	
+	<footer>
+		<div class="container">
+			<div class="logo"><span class="hidden2">BeCoinMaker</span></div>
+			<div>
+				Copyright &copy; 2018 BeCoinMaker. All rights reserved.<br>
+				BeCoinMaker는 ICO를 가상으로 진행 해보는 서비스이며 단순 정보 제공 이외에 어떤 기능도 하지 않고, 이후 사용자의 불법적인 투자 등에 대해 일절 책임을 지지 않습니다.
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
