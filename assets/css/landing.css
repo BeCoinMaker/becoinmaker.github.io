@@ -5,7 +5,19 @@ section.common > h1{
 	margin-top: -10px;
 }
 
+section.common > h2{
+	position: relative;
+}
 
+
+section.last-btn{
+	padding: 80px 0 25px;
+	text-align: center;
+}
+
+
+
+/* index.html */
 .home header{
 	position: absolute;
 	background-image: none;
@@ -62,10 +74,81 @@ section.common > h1{
 	margin-bottom: 60px;
 }
 
-.home section.last-btn{
-	padding: 80px 0 25px;
-	text-align: center;
-}
-
 .home section.common > h2{ padding-bottom: 20px; }
 .home section.common > p{ font-size: 17px; }
+
+
+
+/* learn/* */
+.learn .s-tile{ cursor: default; }
+.learn .s-tile:hover{ background-color: #e8e8e8; }
+
+
+
+/* learn/blockchain-usages.html */
+.learn section.common > h2.lined:before{
+	display: block;
+	position: absolute;
+	content: "";
+	width: 150px;
+	height: 5px;
+	background-color: #138891;
+	top: -25px;
+}
+
+.learn section.common > h4{
+	font-weight: normal;
+	font-size: 18px;
+	margin: 23px 0 8px;
+}
+
+.learn section.common ul li strong{
+	display: inline-block;
+	font-weight: normal;
+	color: black;
+}
+.learn section.common ul li span.sub{
+	font-weight: lighter;
+	color: #585858;
+}
+
+.learn section.common ul.usage{
+	margin: 0 0 30px;
+	list-style: circle;
+}
+.learn section.common ul.usage li{
+	padding: 5px;
+	margin: 10px 0;
+}
+.learn section.common ul.usage li strong{ margin-bottom: 5px }
+
+
+.learn section.common ul.coins{
+	margin: 0 0 30px;
+	padding: 0;
+	list-style: none;
+}
+
+.learn section.common ul.coins a:hover li{ border-color: #ccc }	
+.learn section.common ul.coins li{
+	float: left;
+	text-align: center;
+	width: 150px;
+	margin: 0 20px 0 0;
+	padding: 15px;
+
+	border: 2px solid #eee;
+	border-radius: 10px;
+	transition: all 0.5s;
+	
+}
+.learn section.common ul.coins li strong{ margin-top: 5px; }
+
+.learn section.last{
+	text-align: center;
+	border-top: 1px solid #f0f0f0;
+	padding-top: 50px;
+}
+.learn section.last p{
+	padding-bottom: 20px;
+}

@@ -1,0 +1,213 @@
+---
+layout: 'default'
+title: 'ICO란'
+class: 'learn'
+---
+
+{% assign currencies = site.data.currencies %}
+
+<style type="text/css">
+	section.wallet h5{
+		font-size: 14px;
+		color: #585858;
+		width: 425px;
+		text-align: left;
+		margin: 13px 0 5px;
+	}
+	section.wallet .box{
+		width: 500px;
+		margin: 0 0 20px;
+		background-color: #f5f5f5;
+		display: inline-block;
+		padding: 5px 5px 3px;
+		color: #585858;
+		word-break: break-all;
+	}
+
+	.website{
+		width: 696px;
+		height: 490px;
+		margin: 20px auto;
+		background-image: url('/assets/image/ico_homepage.png');
+		background-size: 696px auto;
+		box-sizing: border-box;
+
+		padding: 110px 0 10px;
+		font-size: 14px;
+		text-align: center;
+		color: #585858;
+
+		border: 1px solid #eee;
+		border-radius: 10px;
+		border-top: none;
+	}
+
+	.website ul.s-tile-container{
+		width: 510px;
+		margin: 15px auto 0;
+	}
+	.website ul.s-tile-container .s-tile.type-m{ margin-bottom: 0 }
+
+	.website h3{
+		font-size: 20px;
+		font-weight: normal;
+		color: black;
+		margin: 9px 0;
+	}
+	.website h4{
+		font-size: 16px;
+		font-weight: normal;
+		color: black;
+		margin: 20px 0 7px;
+	}
+	.website p{
+		margin: 5px 0;
+	}
+</style>
+
+<section class="common container">
+	<h1>ICO란 무엇일까요?</h1>
+	<p>
+		최근에 인터넷 메신저 중 하나인 텔레그램에서 ICO를 통해 1조 원 가량의 자본금을 모집했습니다.<br>
+
+		ICO란 Initial Coin Offering의 약자로, 개발진이 가지고 있는 코인(토큰)을 대중에게 팔아서 투자금을 모집하는 일종의 크라우드 펀딩이라고 할 수 있습니다.
+	</p>
+</section>
+
+
+
+<section class="common container">
+	<h2>암호화폐를 통해 투자금을 모집합니다.</h2>
+	<p>
+		최근에 인터넷 메신저 중 하나인 텔레그램에서 ICO를 통해 1조 원 가량의 자본금을 모집했습니다.<br>
+
+		ICO란 Initial Coin Offering의 약자로, 개발진이 가지고 있는 코인(토큰)을 대중에게 팔아서 투자금을 모집하는 일종의 크라우드 펀딩이라고 할 수 있습니다.
+	</p>
+	<p>
+		투자금은 대부분 암호화폐로 모집하며, 1 BTC 당 10,000개 코인 등의 가치로 교환됩니다.
+	</p>
+
+	<h4>대표적인 암호화폐</h4>
+	<div>
+		<ul class="s-tile-container">
+			{% for currency in currencies %}
+			<li>
+				<div class="s-tile type-m centered">
+					<div class="icon">
+						<i class="cc {{ currency.id }}-alt"></i>
+					</div>
+					<h5>{{ currency.title }}({{ currency.id }})</h5>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
+
+
+<section class="wallet common container">
+	<h2>입금과 지갑주소</h2>
+
+	<h4>지갑주소</h4>
+	<p>
+		암호화폐는 '계좌번호'와 비슷한 개념인 '지갑주소'를 사용합니다.<br>
+		다만 계좌번호는 은행과 국가에 의해서 추적될 수 있지만 지갑주소는 누구나 만들 수 있고, 추적이 어렵습니다.
+	</p>
+
+	<div style="border: 1px solid #ddd; padding: 5px 15px; width: 520px;">
+		<h5>지갑 주소(예시):</h5>
+		<div class="box">
+			0x7ca387b77307bbc13d4a1d23af311232ff33e139586853fa44
+		</div>
+
+		<h5>지갑 비밀번호 (Private Key; 비밀번호):</h5>
+		<div class="box">
+			0x883fd223e5c87312b900543f1a8c88a23f448d837ccd292532ebb13089f8c88a23f448d837ccd2da9e41d1f570b38091797580bb641f7f7ad11434910b1d7a4531257c63321bf457b5545064a63ff237fb5192dfe87da1814247d9b40c1c925324502922379a74cb69f8957a8a54b95dbfe8ee961d74713b9b8daa8d3a68924bbf514746cb1f4bb918fa63ff237fb5192dfe87da18142479692ec2ecc9396616b3595b2ca73b10bb3ce5f3e0b2a3b9e6e8a0ee86322bbde4af3c08dda0b7f647e5cc0376a74e540f74cdb13a
+		</div>
+	</div>
+
+	<h4>입금</h4>
+	<p>
+		개인 투자자는 여러분의 지갑으로 암호화폐를 전송 할 것입니다.<br>
+		암호화폐의 가치가 변동성이 심하긴 하지만, 현실 화폐를 사용하지 않으니 안전하고 법률이 제한하기 어렵습니다.
+	</p>
+</section>
+
+
+
+<section class="common container">
+	<h2>사람들은 왜 ICO에 투자할까요?</h2>
+	<p>
+		ICO 개발진들이 개발을 포기하려고 해도 이를 방지하거나 제대할 수단은 없습니다.<br>
+		특히 작정하고 익명으로 운영을 하고 암호화폐를 통해 투자를 받으면 추적조차 불가능합니다.
+	</p>
+	<p>
+		그럼에도 사용자들이 ICO를 하는 이유는 해당 코인이 실제로 유용하게 쓰여 가치가 높아진다면 큰 수익을 낼 수 있기 때문입니다.<br>
+		ICO를 통해 초기 자본금을 모집한 코인이 이후 주요 거래소에 상장되면 가격은 평균 5~10배 정도 오릅니다.
+	</p>
+</section>
+
+
+<section class="common container">
+	<h2>백서와 홈페이지</h2>
+	<p>
+		투자자를 모집하기 위해 코인의 용도, 목적, 개발현황 및 미래를 담은 백서(White Paper)를 만들어야 합니다.<br>
+		또, 이를 이용자에게 신뢰성을 주도록 쉽게 풀어쓴 백서의 내용과 운영진의 인적 정보 등을 담아 홈페이지를 만들기도 합니다.
+	</p>
+
+	<div class="website">
+		<h3>MyICO에 투자하세요!</h3>
+		<p>
+			식자재의 원산지와 유통 경로 등을 추적하여 소비자가 정확한 정보를 얻을 수 있게 합니다.<br>
+			아래 기술을 사용해서 구현되었습니다.
+		</p>
+		<ul class="s-tile-container">
+			<li>
+				<div class="s-tile type-m not-btn centered">
+					<div class="icon">
+						<i class="fas fa-globe"></i>
+					</div>
+					<h5>공개형 (Public)</h5>
+				</div>
+			</li>
+			<li>
+				<div class="s-tile type-m not-btn centered">
+					<div class="icon">
+						<i class="cc ETH-alt"></i>
+					</div>
+					<h5>이더리움(ETH) 활용</h5>
+				</div>
+			</li>
+			<li>
+				<div class="s-tile type-m not-btn centered">
+					<div class="icon">
+						<i class="fas fa-industry"></i>
+					</div>
+					<h5>작업증명 (PoW)</h5>
+				</div>
+			</li>
+		</ul>
+
+		<h4>다음과 같은 비율로 교환이 진행됩니다</h4>
+		<div class="ng-binding ng-scope ng-hide">
+			1 BTC = 80 MYICO
+		</div>
+		<div class="ng-binding ng-scope">
+			1 ETH = 4.4 MYICO
+		</div>
+		<div class="ng-binding ng-scope">
+			1 XRP = 0.006 MYICO
+		</div>
+	</div>
+</section>
+
+
+<section class="common last container">
+	<p>
+		BeCoinMaker를 통해 코인을 만들어보는 시뮬레이션을 진행해 볼 수 있습니다.<br>
+		ICO를 진행하는 이유를 직접 경험해보며 알아가보세요.
+	</p>
+	<a href="/">
+		<button class="white-btn">자세히 알아보기</button>
+	</a>
+</section>

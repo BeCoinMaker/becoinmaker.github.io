@@ -31,8 +31,8 @@ app.config(function ($routeProvider) {
 
 app.run(function ($rootScope, $location, $window, LocalSettings) {
 	window.onbeforeunload = function (event) {		
-		if ($location.path() == '/') {
-			// Ignore on root
+		if ($location.path() == '/' || $location.path() == '/complete') {
+			// Ignore on root or complete page
 			return;
 		}
 
@@ -50,16 +50,9 @@ app.run(function ($rootScope, $location, $window, LocalSettings) {
 		$window.scrollTo(0, 0);
 	});
 
-	$rootScope.data = data; // By data.js
+	$rootScope.data = data; // By _data
+	$rootScope.currencies = currencies; // By _data
 	$rootScope.settings = {};
-
-	$rootScope.currencies = [
-		{'id': 'BTC',  'title': '비트코인', 'price': 8000 * 1000, 'selected': true},
-		{'id': 'ETH',  'title': '이더리움', 'price': 440 * 1000, 'selected': true},
-		{'id': 'XRP',  'title': '리플', 	 'price': 600},
-		{'id': 'LTC',  'title': '라이트코인', 'price': 130 * 1000},
-		{'id': 'QTUM', 'title': '퀀텀',	  'price': 15 * 1000}
-	];
 
 	function initSettings() {
 		$rootScope.settings = {
@@ -102,16 +95,17 @@ app.run(function ($rootScope, $location, $window, LocalSettings) {
 
 
 app.controller('IndexController', function ($location) {
-	console.log('index');
 	$location.path('/step1');
 });
 
 app.controller('Step1Controller', function ($scope, $rootScope, LocalSettings) {
 	$rootScope.page = 'step1';
+	$rootScope.title = '시작하기 앞서';
 });
 
 app.controller('Step2Controller', function ($scope, $rootScope, NextSectionOpener) {
 	$rootScope.page = 'step2';
+	$rootScope.title = '코인 설정';
 
 	var usagesFlatted = $rootScope.data.usagesFlatted;
 
@@ -164,6 +158,7 @@ app.controller('Step2Controller', function ($scope, $rootScope, NextSectionOpene
 
 app.controller('Step3Controller', function ($scope, $rootScope, LocalSettings, NextSectionOpener) {
 	$rootScope.page = 'step3';
+	$rootScope.title = '코인 생성';
 	LocalSettings.load();
 
 	var k = $rootScope.data.pureKoreans;
@@ -196,6 +191,7 @@ app.controller('Step3Controller', function ($scope, $rootScope, LocalSettings, N
 
 app.controller('Step4Controller', function ($scope, $rootScope, LocalSettings, NextSectionOpener) {
 	$rootScope.page = 'step4';
+	$rootScope.title = 'ICO 진행';
 	LocalSettings.load();
 
 	$rootScope.settings.price = 500;
@@ -266,5 +262,6 @@ app.factory('NextSectionOpener', function () {
 
 app.controller('CompleteController', function ($scope, $rootScope, LocalSettings) {
 	$rootScope.page = 'home';
+	$rootScope.title = '완료';
 	LocalSettings.load();
 });

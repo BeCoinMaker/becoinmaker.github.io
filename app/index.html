@@ -5,7 +5,7 @@ layout: null
 <!doctype html>
 <html ng-app="bcmApp">
 <head>
-	<title>BeCoinMaker</title>
+	<title ng-bind="title + ' - BeCoinMaker'">BeCoinMaker</title>
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -27,16 +27,29 @@ layout: null
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
-	<script src="js/angular-tooltips.js"></script>
-	<script src="js/data.js"></script>
-	<script src="js/app.js"></script>
+	<script src="/js/angular-tooltips.js"></script>
+	
+	<script type="text/javascript">
+		var data = {{ site.data.data | jsonify }};
+
+		data.usagesFlatted = {};
+		for (var category in data.usages) {
+			for (var i in data.usages[category]) {
+				var item = data.usages[category][i];
+				item.category = category;
+				data.usagesFlatted[item.name] = item;
+			}
+		}
+
+		var currencies = {{ site.data.currencies | jsonify }};
+	</script>
+	<script src="/js/app.js"></script>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117116907-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-
 		gtag('config', 'UA-117116907-1');
 	</script>
 
@@ -70,8 +83,8 @@ layout: null
 			<div class="logo"><span class="hidden2">BeCoinMaker</span></div>
 			<div>
 				Copyright &copy; 2018 BeCoinMaker. All rights reserved.<br>
-				BeCoinMaker는 ICO를 가상으로 진행 해보는 서비스이며 단순 정보 제공 이외에 어떤 기능도 하지 않고, 이후 사용자의 불법적인 투자 등에 대해 일절 책임을 지지 않습니다.<br><br>
-				후원하기: QaQ1HUVFyreNk6m7U8KoMyxjbp8kBfQnWw (퀀텀 지갑 주소)
+				BeCoinMaker는 ICO를 가상으로 진행 해보는 서비스이며 단순 정보 제공 이외에 어떤 기능도 하지 않고, 이후 사용자의 불법적인 투자 등에 대해 어떠한 책임도 지지 않습니다.<br>
+				각종 문의: becoinmaker@prev.kr
 			</div>
 		</div>
 	</footer>

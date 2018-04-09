@@ -1,0 +1,56 @@
+---
+layout: 'default'
+title: '블록체인의 활용 사례'
+class: 'learn'
+---
+
+{% assign data = site.data.data %}
+
+<section class="common container">
+	<h1>블록체인의 활용 사례에는 어떤 것들이 있나요?</h1>
+	<p>
+		블록체인은 지금까지 없던 새로운 개념입니다. 단순히 거래가 가능한 암호화폐를 넘어, 탈중앙화를 통해 다양한 가치를 창출해 낼 수 있습니다.<br>
+		블록체인의 활용 방법은 수십, 수백 가지가 있지만, 그 중에서도 대표적인 6가지를 뽑아보았습니다.
+	</p>
+</section>
+
+
+{% for category in data.categories %}
+<section id="{{ category.name | replace: ' ', '-' | replace: '/', '-' }}" class="common container">
+	<h2 class="lined">{{ forloop.index }}. {{ category.name }}</h2>
+	<p>{{ category.description }}</p>
+	
+	<h4>활용 방법</h4>
+	<ul class="usage clearfix">
+	{% for usage in data.usages[category.name] %}
+		<li>
+			<strong>{{ usage.name }}</strong><br>
+			<span class="sub">{{ usage.description }}</span>
+		</li>
+	{% endfor %}
+	</ul>
+
+	<h4>관련 코인/토큰</h4>
+	<ul class="coins clearfix">
+	{% for example in category.examples %}
+		<a href="{{ example.site_url }}" target="_blank">
+			<li>
+				<span class="coin50x {{ example.code }}"></span><br>
+				<strong>{{ example.name }}</strong><br>
+				<span class="sub">{{ example.description }}</span>
+			</li>
+		</a>
+	{% endfor %}
+	</ul>
+</section>
+{% endfor %}
+
+
+<section class="common last container">
+	<p>
+		BeCoinMaker를 통해 위 활용방법을 바탕으로 코인을 만들어보는 시뮬레이션을 진행해 볼 수 있습니다.
+	</p>
+	<a href="/">
+		<button class="white-btn">자세히 알아보기</button>
+	</a>
+</section>

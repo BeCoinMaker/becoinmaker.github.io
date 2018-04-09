@@ -1,0 +1,21 @@
+- id: BTC
+  title: 비트코인
+  price: 8000000
+  selected: true
+
+- id: ETH
+  title: 이더리움
+  price: 440000
+  selected: true
+
+- id: XRP
+  title: 리플
+  price: 600
+  
+- id: LTC
+  title: 라이트코인
+  price: 130000
+
+- id: QTUM
+  title: 퀀텀
+  price: 15000

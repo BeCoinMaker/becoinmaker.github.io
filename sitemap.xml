@@ -1,0 +1,13 @@
+---
+layout: null
+---
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	{% for page in site.pages %}
+	{% if page.url != '/sitemap.xml' %}
+	<url>
+		<loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
+		<priority>1</priority>
+	</url>
+	{% endif %}
+	{% endfor %}
+</urlset>

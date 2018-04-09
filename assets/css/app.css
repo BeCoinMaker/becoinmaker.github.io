@@ -223,7 +223,7 @@ header{
 	padding: 45px 0 30px;
 }
 
-.step4 section#result .webite{
+.step4 section#result .website{
 	width: 696px;
 	height: 490px;
 	margin: 20px auto;
@@ -236,25 +236,25 @@ header{
 	color: #585858;
 }
 
-.step4 section#result .webite ul.s-tile-container{
+.step4 section#result .website ul.s-tile-container{
 	width: 510px;
 	margin: 15px auto 0;
 }
-.step4 section#result .webite ul.s-tile-container .s-tile.type-m{ margin-bottom: 0 }
+.step4 section#result .website ul.s-tile-container .s-tile.type-m{ margin-bottom: 0 }
 
-.step4 section#result .webite h3{
+.step4 section#result .website h3{
 	font-size: 20px;
 	font-weight: normal;
 	color: black;
 	margin: 9px 0;
 }
-.step4 section#result .webite h4{
+.step4 section#result .website h4{
 	font-size: 16px;
 	font-weight: normal;
 	color: black;
 	margin: 20px 0 7px;
 }
-.step4 section#result .webite p{
+.step4 section#result .website p{
 	margin: 5px 0;
 }
 
